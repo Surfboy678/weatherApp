@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather On the World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<h1 align="center">Weather On the world</h1>
+
+</div>
+</form>
+
+<div class="box-left">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Info</b></td>
+        </tr>
+        </thead>
+        <tbody>
+
+            <td>Temperature</td>
+            <td th:text="${weather.getMain().getTemp()}"></td>
+        </tr>
+        <tr>
+            <td>Pressure</td>
+            <td th:text="${weather.getMain().getPressure()}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <form th:action="${'?city='}" th:method="get">
+        <div class=" input-group">
+            <input class="form-control" placeholder="city" name="city" type="text" />
+            <span class="input-group-btn" style="width:0;">
+                <button id="city" class="btn btn-info" type="submit">search</button>
+            </span>
+
+
+        </div>
+    </form>
+</div>
+
+
+</body>
+
+
+</html>
